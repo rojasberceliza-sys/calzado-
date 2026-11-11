@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calzado Luna</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f0f5fc;
+    color: #172b49;
+}
+
+header {
+    background: #1255a0;
+    color: white;
+    padding: 18px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+header p {
+    margin-top: 5px;
+}
+
+nav {
+    background: #07366f;
+    padding: 13px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.inicio {
+    background: linear-gradient(120deg,#1255a0,#6ca9e9);
+    color: white;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.inicio h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.inicio p {
+    line-height: 1.6;
+}
+
+.boton {
+    display: inline-block;
+    background: white;
+    color: #1255a0;
+    padding: 12px 22px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 30px 15px;
+}
+
+h2 {
+    text-align: center;
+    color: #1255a0;
+    margin-bottom: 20px;
+}
+
+.categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.categorias button {
+    background: #1255a0;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.categorias button:hover {
+    background: #07366f;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.producto {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px #00000015;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.producto img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.producto h3 {
+    margin: 12px 5px;
+    color: #1255a0;
+}
+
+.producto p {
+    font-size: 13px;
+    padding: 5px 10px;
+    color: #555;
+}
+
+.precio {
+    display: block;
+    color: #1255a0;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 12px;
+}
+
+.producto button {
+    background: #1255a0;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.producto button:hover {
+    background: #07366f;
+}
+
+.contenedor {
+    max-width: 900px;
+    margin: auto;
+}
+
+.panel {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px #00000010;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+}
+
+.item-carrito button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.total {
+    text-align: right;
+    font-size: 23px;
+    font-weight: bold;
+    color: #1255a0;
+    margin-top: 20px;
+}
+
+form {
+    display: grid;
+    gap: 12px;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+form label {
+    font-weight: bold;
+    color: #1255a0;
+}
+
+form button {
+    background: #1255a0;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background: #07366f;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+@media(max-width:700px) {
+    .productos {
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+
+    .producto img {
+        height: 130px;
+    }
+
+    .producto h3 {
+        font-size: 14px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 13px;
+    }
+}
+
+@media(max-width:380px) {
+    .productos {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">☾ CALZADO LUNA</div>
+    <p>Camina con estilo y comodidad</p>
+</header>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#carrito">Carrito 🛒</a>
+    <a href="#cliente">Cliente</a>
+</nav>
+
+<section class="inicio" id="inicio">
+    <h1>Bienvenidos a Calzado Luna</h1>
+    <p>
+        Encuentra los mejores zapatos para damas,
+        caballeros y niños.<br>
+        Calidad, moda y comodidad para toda la familia.
+    </p>
+    <a href="#catalogo" class="boton">Ver productos</a>
+</section>
+
+<section id="catalogo">
+    <h2>👟 Nuestro Catálogo</h2>
+
+    <div class="categorias">
+        <button onclick="filtrar('Todos')">Todos</button>
+        <button onclick="filtrar('Damas')">Damas</button>
+        <button onclick="filtrar('Caballeros')">Caballeros</button>
+        <button onclick="filtrar('Niños')">Niños</button>
+    </div>
+
+    <div class="productos" id="productos"></div>
+</section>
+
+<section id="carrito">
+    <div class="contenedor panel">
+        <h2>🛒 Carrito de Compras</h2>
+        <div id="lista-carrito">
+            Tu carrito está vacío.
+        </div>
+
+        <div class="total">
+            Total: S/ <span id="total">0.00</span>
+        </div>
+    </div>
+</section>
+
+<section id="cliente">
+    <div class="contenedor panel">
+        <h2>📋 Datos del Cliente</h2>
+
+        <form id="formulario">
+            <label>Nombre completo:</label>
+            <input type="text" id="nombre"
+                placeholder="Ingrese su nombre" required>
+
+            <label>Celular:</label>
+            <input type="tel" id="celular"
+                placeholder="Ingrese su celular" required>
+
+            <label>Correo electrónico:</label>
+            <input type="email" id="correo"
+                placeholder="Ingrese su correo">
+
+            <label>Dirección:</label>
+            <input type="text" id="direccion"
+                placeholder="Ingrese su dirección" required>
+
+            <label>Método de pago:</label>
+            <select id="pago">
+                <option>Yape / Plin</option>
+                <option>Transferencia bancaria</option>
+                <option>Pago contra entrega</option>
+            </select>
+
+            <label>Comentario:</label>
+            <textarea id="comentario"
+                placeholder="Escriba alguna indicación"></textarea>
+
+            <button type="submit">
+                CONFIRMAR PEDIDO
+            </button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <h3>☾ CALZADO LUNA</h3>
+    <p>Gracias por confiar en nuestra tienda.</p>
+    <p>© 2026 Todos los derechos reservados.</p>
+</footer>
+
+<script>
+
+const productos = [
+{
+ id:1,
+ nombre:"Zapatillas de Dama",
+ categoria:"Damas",
+ descripcion:"Zapatillas modernas y cómodas.",
+ precio:89.90,
+ imagen:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600"
+},
+{
+ id:2,
+ nombre:"Tacones Elegantes",
+ categoria:"Damas",
+ descripcion:"Perfectos para ocasiones especiales.",
+ precio:119.90,
+ imagen:"https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?w=600"
+},
+{
+ id:3,
+ nombre:"Sandalias de Dama",
+ categoria:"Damas",
+ descripcion:"Sandalias cómodas y bonitas.",
+ precio:59.90,
+ imagen:"https://images.unsplash.com/photo-1562273138-f46be4ebdf33?w=600"
+},
+{
+ id:4,
+ nombre:"Zapatillas Hombre",
+ categoria:"Caballeros",
+ descripcion:"Calzado deportivo y moderno.",
+ precio:129.90,
+ imagen:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600"
+},
+{
+ id:5,
+ nombre:"Zapatos Casuales",
+ categoria:"Caballeros",
+ descripcion:"Elegancia para cada día.",
+ precio:109.90,
+ imagen:"https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=600"
+},
+{
+ id:6,
+ nombre:"Mocasines",
+ categoria:"Caballeros",
+ descripcion:"Comodidad y elegancia.",
+ precio:99.90,
+ imagen:"https://images.unsplash.com/photo-1531310197839-ccf54634509e?w=600"
+},
+{
+ id:7,
+ nombre:"Zapatillas Infantiles",
+ categoria:"Niños",
+ descripcion:"Ideales para jugar y correr.",
+ precio:69.90,
+ imagen:"https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=600"
+},
+{
+ id:8,
+ nombre:"Zapatos Escolares",
+ categoria:"Niños",
+ descripcion:"Perfectos para ir al colegio.",
+ precio:79.90,
+ imagen:"https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=600"
+},
+{
+ id:9,
+ nombre:"Sandalias Infantiles",
+ categoria:"Niños",
+ descripcion:"Ligeras y cómodas.",
+ precio:49.90,
+ imagen:"https://images.unsplash.com/photo-1562273138-f46be4ebdf33?w=600"
+}
+];
+
+let carrito = [];
+
+function mostrarProductos(categoria="Todos") {
+
+    let contenedor = document.getElementById("productos");
+
+    contenedor.innerHTML = "";
+
+    productos.forEach(producto => {
+
+        if(categoria === "Todos" ||
+           producto.categoria === categoria) {
+
+            contenedor.innerHTML += `
+            <div class="producto">
+
+                <img src="${producto.imagen}"
+                     alt="${producto.nombre}">
+
+                <h3>${producto.nombre}</h3>
+
+                <p>${producto.descripcion}</p>
+
+                <span class="precio">
+                    S/ ${producto.precio.toFixed(2)}
+                </span>
+
+                <button onclick="agregar(${producto.id})">
+                    Agregar al carrito
+                </button>
+
+            </div>
+            `;
+        }
+
+    });
+}
+
+function filtrar(categoria) {
+    mostrarProductos(categoria);
+}
+
+function agregar(id) {
+
+    let producto = productos.find(p => p.id === id);
+
+    let existente = carrito.find(p => p.id === id);
+
+    if(existente) {
+        existente.cantidad++;
+    } else {
+        carrito.push({
+            ...producto,
+            cantidad:1
+        });
+    }
+
+    mostrarCarrito();
+}
+
+function eliminar(id) {
+
+    carrito = carrito.filter(p => p.id !== id);
+
+    mostrarCarrito();
+}
+
+function mostrarCarrito() {
+
+    let lista = document.getElementById("lista-carrito");
+
+    lista.innerHTML = "";
+
+    if(carrito.length === 0) {
+        lista.innerHTML = "Tu carrito está vacío.";
+    }
+
+    let total = 0;
+
+    carrito.forEach(producto => {
+
+        let subtotal =
+            producto.precio * producto.cantidad;
+
+        total += subtotal;
+
+        lista.innerHTML += `
+        <div class="item-carrito">
+
+            <div>
+                <strong>${producto.nombre}</strong><br>
+                Cantidad: ${producto.cantidad}<br>
+                Subtotal: S/ ${subtotal.toFixed(2)}
+            </div>
+
+            <button onclick="eliminar(${producto.id})">
+                Eliminar
+            </button>
+
+        </div>
+        `;
+    });
+
+    document.getElementById("total").textContent =
+        total.toFixed(2);
+}
+
+document.getElementById("formulario")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    if(carrito.length === 0) {
+        alert("Primero agregue productos al carrito.");
+        return;
+    }
+
+    let nombre = document.getElementById("nombre").value;
+    let celular = document.getElementById("celular").value;
+    let direccion = document.getElementById("direccion").value;
+    let pago = document.getElementById("pago").value;
+
+    let total = carrito.reduce((suma, p) =>
+        suma + p.precio * p.cantidad, 0
+    );
+
+    let detalle = carrito.map(p =>
+        p.nombre + " x " + p.cantidad
+    ).join("\n");
+
+    alert(
+        "¡PEDIDO CONFIRMADO!\n\n" +
+        "Tienda: CALZADO LUNA\n" +
+        "Cliente: " + nombre + "\n" +
+        "Celular: " + celular + "\n" +
+        "Dirección: " + direccion + "\n" +
+        "Pago: " + pago + "\n\n" +
+        "PRODUCTOS:\n" + detalle +
+        "\n\nTOTAL: S/ " + total.toFixed(2)
+    );
+
+    carrito = [];
+    mostrarCarrito();
+    this.reset();
+
+});
+
+mostrarProductos();
+mostrarCarrito();
+
+</script>
+
+</body>
+</html>
+</body>
+</html>
